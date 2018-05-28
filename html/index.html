@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <style>
+        .is-wrap{
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .is-wrap .container{
+            padding-bottom: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section is-medium is-wrap">
+        <div class="container">
+            <h1 class="title">
+                LED control server
+            </h1>
+            <h2 class="subtitle">
+                Raspberry Pi GPIO board web controller
+            </h2>
+        </div>
+
+            <div class="columns">
+                <div class="column">
+                        <div class="card">
+                                <header class="card-header">
+                                  <p class="card-header-title">
+                                    LED 1
+                                  </p>
+                                  <a href="#" class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                  </a>
+                                </header>
+                                <div class="card-content">
+                                  <div class="content">
+                                    <span class="tag is-info is-large">On</span>
+                                    <br>
+                                    last update time<time datetime="2016-1-1">2018-06-01 10:00</time>
+                                  </div>
+                                </div>
+                                <footer class="card-footer">
+                                  <a href="#" class="card-footer-item">On</a>
+                                  <a href="#" class="card-footer-item">Off</a>
+                                </footer>
+                              </div>
+                </div>
+                <div class="column">
+                        <div class="card">
+                                <header class="card-header">
+                                  <p class="card-header-title">
+                                    LED 2
+                                  </p>
+                                  <a href="#" class="card-header-icon" aria-label="more options">
+                                    <span class="icon">
+                                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                    </span>
+                                  </a>
+                                </header>
+                                <div class="card-content">
+                                  <div class="content">
+                                    <span class="tag is-danger is-large">On</span>
+                                    <br>
+                                    last update time<time datetime="2016-1-1">2018-06-01 10:00</time>
+                                  </div>
+                                </div>
+                                <footer class="card-footer">
+                                  <a href="#" class="card-footer-item">On</a>
+                                  <a href="#" class="card-footer-item">Off</a>
+                                </footer>
+                              </div>
+                </div>
+            </div>
+
+    </section>
+    <script>
+        console.log('say hello in browser')
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "ledcontrolserver3",
+  "version": "0.1.0",
+  "description": "led control from web page",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "danbi9612@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "cli-color": "^1.2.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}
