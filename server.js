@@ -16,6 +16,14 @@ app.get('/', (req, res) => {
 
     res.render('index.html', { ip:client_ip })
 })
+app.get('/ledon/:id', (req, res) => {
+    let id = req.params.id
+    res.send('led on:' + id)
+})
+app.get('/ledoff/:id', (req, res) => {
+    let id = req.params.id
+    res.send('led off:' + id)
+})
 
 
 app.listen(8000, () => {

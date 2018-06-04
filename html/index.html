@@ -4,9 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title> LED control server </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <style>
         .is-wrap{
             max-width: 700px;
@@ -16,6 +15,50 @@
             padding-bottom: 2em;
         }
     </style>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+      $( function () {
+        let ledOn = (id) => {
+          $.ajax({
+              url:"/ledon/" + id,
+              success: (result) => {
+                console.log(result)
+              }
+          })    
+        }
+
+        let ledOff = (id) => {
+          $.ajax({
+              url:"/ledoff/" + id,
+              success: (result) => {
+                console.log(result)
+              }
+          })
+        }
+
+          let led1 = $('.led-1')
+          led1.on('click','.card-footer .on', () => {
+            console.log('led 1 button - on action')
+            ledOn(1)
+          })
+
+          led1.on('click','.card-footer .off', () => {
+            console.log('led 1 button - off action')
+            ledOff(1)
+          })
+
+          let led2 = $('.led-2')
+          led2.on('click','.card-footer .on', () => {
+            console.log('led 2 button - on action')
+            ledOn(2)
+          })
+
+          led2.on('click','.card-footer .off', () => {
+            console.log('led 2 button - off action')
+            ledOff(2)
+          })
+      });
+    </script>
 </head>
 
 <body>
@@ -31,7 +74,7 @@
 
             <div class="columns">
                 <div class="column">
-                        <div class="card">
+                        <div class="card led-1">
                                 <header class="card-header">
                                   <p class="card-header-title">
                                     LED 1
@@ -50,13 +93,13 @@
                                   </div>
                                 </div>
                                 <footer class="card-footer">
-                                  <a href="#" class="card-footer-item">On</a>
-                                  <a href="#" class="card-footer-item">Off</a>
+                                  <a href="#" class="card-footer-item on">On</a>
+                                  <a href="#" class="card-footer-item off">Off</a>
                                 </footer>
                               </div>
                 </div>
                 <div class="column">
-                        <div class="card">
+                        <div class="card led-2">
                                 <header class="card-header">
                                   <p class="card-header-title">
                                     LED 2
@@ -75,17 +118,14 @@
                                   </div>
                                 </div>
                                 <footer class="card-footer">
-                                  <a href="#" class="card-footer-item">On</a>
-                                  <a href="#" class="card-footer-item">Off</a>
+                                  <a href="#" class="card-footer-item on">On</a>
+                                  <a href="#" class="card-footer-item off">Off</a>
                                 </footer>
                               </div>
                 </div>
             </div>
 
     </section>
-    <script>
-        console.log('say hello in browser')
-    </script>
 </body>
 
 </html>
